@@ -31,7 +31,7 @@
         .commune-buttons a {
             display: block;
             padding: 15px;
-            background-color: #997ABD;
+            background-color: #0056b3;
             color: #fff;
             text-decoration: none;
             border-radius: 15px;

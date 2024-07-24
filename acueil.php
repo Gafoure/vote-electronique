@@ -24,6 +24,10 @@
             list-style: none;
             padding: 0;
         }
+        .election-list h2{
+            text-align: center;
+    
+        }
         .election-list li {
             margin-bottom: 40px;
         }
@@ -123,7 +127,7 @@
         <li><a href="Presidentielle.php">Election Presidentielle</a></li>
         <li><a href="Legislative.php">Election Legislative</a></li>
         <li><a href="Minicipale.php" onclick="showCommuneOptions()">Election Municipale</a></li>
-        <li><a href="Referendum.php">Election Referendum</a></li>
+        <li><a href="Referendum.php">Referendum</a></li>
     </ul>
 </div>
 <footer>

@@ -81,6 +81,7 @@ if(isset($_POST['valider'])) {
 
         .btn-success:hover {
             background-color: #0056b3; 
+            cursor: pointer;
         }
 
         .heading_text {
@@ -167,42 +168,59 @@ if(isset($_POST['valider'])) {
             color: var(--color-primary);
         }
 
-    .form_cin {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-inline: 160px;
-    }
+        .form_cin {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-inline: 160px;
+        }
 
-    .form_cin button {
-        padding: 10px 20px;
-        background-color: #0056b3;
-        text-align: center;
-        color: #f8f9fa;
-        border-radius: 8px;
-    }
+        .form_cin button {
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 8px;
+            border: none;
+            color: #f8f9fa;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
 
-    footer {
-        background-color: #000;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
+        .btn-voter {
+            background-color: #0056b3; /* Vert pour voter */
+        }
 
-</style>
+        .btn-voter:hover {
+            background-color: #218838; /* Vert plus foncé au survol */
+        }
+
+        .btn-annuler {
+            background-color: #218838; /* Rouge pour annuler */
+        }
+
+        .btn-annuler:hover {
+            background-color: #c82333; /* Rouge plus foncé au survol */
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <div class="menu__bar">
-        <div class="logo-container">
-            <img src="./image/drapeau.png" alt="Logo" class="logo-image">
-            <h1 class="logo">VoteElectronique</h1>
-        </div>
-        <ul>
-            <li><a class="active" href="#contact">À propos</a></li>
-        </ul>
+    <div class="logo-container">
+        <img src="./image/drapeau.png" alt="Logo" class="logo-image">
+        <h1 class="logo">VoteElectronique</h1>
     </div>
+    <ul>
+        <li><a class="active" href="#contact">À propos</a></li>
+    </ul>
+</div>
 <body class="body_html">
     <div>
         <div class="container">
@@ -210,12 +228,12 @@ if(isset($_POST['valider'])) {
             <div class="user-info">
                 <?php
                 if(isset($_SESSION['utilisateur'])) {
-                    $utilisateur = $_SESSION['utilisateur']; 
+                    $utilisateur = $_SESSION['utilisateur'];
                     echo "<ul>";
                     echo "<li><strong>CIN :</strong> ".$utilisateur['CIN']."</li>";
                     echo "<li><strong>Nom :</strong> ".$utilisateur['Nom']."</li>";
                     echo "<li><strong>Prénom :</strong> ".$utilisateur['Prenom']."</li>";
-                    echo "<li><strong>DateNaissance :</strong> ".$utilisateur['DateNaissance']."</li>";
+                    echo "<li><strong>DateNaissance :</strong> ".date('d/m/Y', strtotime($utilisateur['DateNaissance']))."</li>";
                     echo "<li><strong>Genre :</strong> ".$utilisateur['Genre']."</li>";
                     echo "<li><strong>Commune :</strong> ".$utilisateur['Commune']."</li>";
                     echo "</ul>";
@@ -226,8 +244,8 @@ if(isset($_POST['valider'])) {
             </div>
             <!-- Boutons -->
             <form method="post" action="" class="form_cin">
-                <button type="submit" name="valider" value="Vote">Vote</button>
-                <button type="submit" name="valider" value="Annule">Annule</button>
+                <button type="submit" name="valider" value="Vote" class="btn-voter">Voter</button>
+                <button type="submit" name="valider" value="Annule" class="btn-annuler">Annuler</button>
             </form>
         </div>
     </div>

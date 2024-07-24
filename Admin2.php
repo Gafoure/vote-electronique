@@ -157,28 +157,28 @@
 		</div>
 		<table width="100%" cellspacing="02" cellpadding="05"> 
 		    <tr>
-				<td align="center"><a href="Cree_une_election.php"><font size="5">cree une election</font></a></td>
+				<td align="center"><a href="Cree_une_election.php"><font size="5">crée une élection</font></a></td>
             </tr>
             <tr>
-				<td align="center"><a href="Tour.php"><font size="5">Creation des tours</font></a></td>
+				<td align="center"><a href="Tour.php"><font size="5">Crée des tours</font></a></td>
             </tr>
 			<tr>
-				<td align="center"><a href="liste_election.php"><font size="5">liste des elections</font></a></td>
+				<td align="center"><a href="liste_election.php"><font size="5">Afficher la liste des elections</font></a></td>
             </tr>
 			<tr>
-				<td align="center"><a href="liste_Electeur.php"><font size="5">liste des electeurs</font></a></td>
+				<td align="center"><a href="liste_Electeur.php"><font size="5">Afficher la liste des electeurs</font></a></td>
             </tr>
             <tr>
-				<td align="center"><a href="liste_candidat.php"><font size="5">liste des candidats</font></a></td>
+				<td align="center"><a href="liste_candidat.php"><font size="5">Afficher la liste des candidats</font></a></td>
             </tr>
             <tr>
-				<td align="center"><a href="Liste_Admin.php"><font size="5">Liste des admins</font></a></td>
+				<td align="center"><a href="Liste_Admin.php"><font size="5">Afficher la liste des admins</font></a></td>
             </tr>
             <tr>
-				<td align="center"><a href="Parti.php"><font size="5">Liste des Parties</font></a></td>
+				<td align="center"><a href="Parti.php"><font size="5">Afficher la liste des Parties</font></a></td>
             </tr>
             <tr>
-                <td align="center"><a href="admin_proclaim_results.php"><font size="5">Proclamer Resultats</font></a></td>
+                <td align="center"><a href="admin_proclaim_results.php"><font size="5">Proclamer les Resultats</font></a></td>
             </tr>
 		</table>
 	</div>

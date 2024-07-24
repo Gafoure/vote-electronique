@@ -49,10 +49,31 @@ $result = $conn->query($sql);
             justify-content: space-between;
             padding: 0 5%;
         }
+        .container {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-image {
+            width: 50px; /* Taille du logo */
+            height: 50px; /* Taille du logo */
+            border-radius: 50%; /* Rendre le cadre circulaire */
+            object-fit: cover;
+            margin-right: 10px; /* Espace entre l'image et le texte */
+            background-color: #fff;
+        }
 
         .logo {
-            color: var(--color-primary);
-            font-size: 30px;
+            color: var(--color-white);
+            font-size: 24px; /* Taille du texte du logo */
         }
 
         .menu__bar ul {
@@ -108,6 +129,15 @@ $result = $conn->query($sql);
         font-size: 16px;
         color: white; /* Couleur du texte */
     }
+    footer {
+            background-color: var(--color-black);
+            color: var(--color-white);
+            padding: 3px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
 
     .btn-vert:hover {
         background-color: #218838; /* Vert un peu plus foncé pour l'effet hover */
@@ -116,7 +146,10 @@ $result = $conn->query($sql);
     </head>
 <body>
 <div class="menu__bar">
-    <h1 class="logo"><a href="Admin2.php" style="color: var(--color-primary); text-decoration: none;">SVE</a></h1>
+        <div class="logo-container">
+            <img src="./image/drapeau.png" alt="Logo" class="logo-image">
+            <h1 class="logo"><a href="Admin2.php">VoteElectronique</a></h1>
+        </div>
     <ul>
         <li><a class="active" href="index.php">Home</a></li>
         <li><a class="active" href="connection.php">Admin</a></li>
@@ -219,5 +252,8 @@ $result = $conn->query($sql);
         return confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?");
     }
 </script>
+<footer> 
+    <p> Tout droit est limite &COPY;2024</p>
+</footer>
 </body>
 </html>

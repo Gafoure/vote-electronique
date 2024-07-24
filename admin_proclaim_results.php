@@ -41,6 +41,11 @@ $result_elections = $conn->query($sql_elections);
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
+        .btn btn-primary{
+            width: 50%;
+            padding: 10px;
+            border-radius: 3px;
+        }
         .form-label {
             font-weight: bold;
         }
@@ -51,7 +56,7 @@ $result_elections = $conn->query($sql_elections);
             border-radius: 5px;
         }
         .btn-primary {
-            margin-top: 20px;
+            margin-top: 30px;
             background-color: #007bff;
             border: none;
         }

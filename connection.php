@@ -90,6 +90,11 @@
         .input-container i {
             margin-right: 20px;
             color: #007bff;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translate(-50%);
+            font-size: 20px;
         }
 
         .input-container input {
@@ -207,7 +212,6 @@
         <h1 class="logo">VoteElectronique</h1>
     </div>
     <ul>
-
         <li><a class="active" href="index.php">Home</a></li>
         <li><a class="active" href="inscription.php">Voter</a></li>
         <li><a class="active" href="results.php">Voir les Resultats</a></li>
@@ -220,12 +224,10 @@
     <form method="POST">
         <label>Email</label>
         <div class="input-container">
-            <i class="bi bi-envelope"></i>
             <input type="text" name="Email" required>
         </div>
         <label>Mot de passe</label>
         <div class="input-container">
-        <i class="bi bi-file-lock"></i>
             <input type="password" name="pass" required>
         </div>
         <input type="submit" name="Submit" value="Submit">

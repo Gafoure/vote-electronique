@@ -18,9 +18,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = "Erreur : " . $sql . "<br>" . $conn->error;
     }
 }
+$sql_election = "SELECT * FROM election";
+$sql_election_result = $conn->query($sql_election);
+
 // Récupération des tours de la base de données
 $sql = "SELECT * FROM tour";
 $result = $conn->query($sql);
+
+$elections = [];
+if ($sql_election_result->num_rows > 0) {
+    while ($row = $sql_election_result->fetch_assoc()) {
+        $elections[$row['electionID']] = $row;
+    }
+}
 ?>
 
 <!doctype html>
@@ -130,7 +140,7 @@ $result = $conn->query($sql);
 <div class="menu__bar">
         <div class="logo-container">
             <img src="./image/drapeau.png" alt="Logo" class="logo-image">
-            <h1 class="logo">VoteElectronique</h1>
+            <h1 class="logo"><a href="Admin2.php">VoteElectronique</a></h1>
         </div>
         <ul>
             <li><a class="active" href="connection.php">Admin</a></li>
@@ -158,7 +168,14 @@ $result = $conn->query($sql);
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="electionID" class="form-label">Election ID:</label>
-                            <input type="number" class="form-control" id="electionID" name="electionID" required>
+                            <!-- <input type="number" class="form-control" id="electionID" name="electionID" required> -->
+                            <select class="form-control" id="electionID" name="electionID" required>
+                            <?php
+                                foreach ($elections as $electionID => $row) {
+                                    echo '<option value="' . $row["electionID"] . '">Élection ' . htmlspecialchars($row["TypeElection"]) . ': Date du ' . htmlspecialchars($row["StartDate"]) . ' au ' . htmlspecialchars($row["EndDate"]) . '</option>';
+                                }
+                            ?>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="StartDate" class="form-label">Start Date:</label>
@@ -180,7 +197,7 @@ $result = $conn->query($sql);
         <thead>
             <tr>
                 <th>Tour ID</th>
-                <th>Election ID</th>
+                <th>Election</th>
                 <th>Start Date</th>
                 <th>End Date</th>
                 <th>Actions</th>
@@ -190,9 +207,10 @@ $result = $conn->query($sql);
         <?php
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
+                $election = $elections[$row["electionID"]] ?? ['TypeElection' => 'Inconnu', 'StartDate' => 'Inconnu', 'EndDate' => 'Inconnu'];
                 echo "<tr>
                         <td>" . $row["tourID"] . "</td>
-                        <td>" . $row["electionID"] . "</td>
+                        <td> Election " . $election["TypeElection"] . ". Du: ". $election["StartDate"] ." au ". $election["StartDate"]. "</td>
                         <td>" . $row["StartDate"] . "</td>
                         <td>" . $row["EndDate"] . "</td>
                         <td>
@@ -207,6 +225,9 @@ $result = $conn->query($sql);
         ?>
         </tbody>
     </table>
+    <?php
+    
+    ?>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>

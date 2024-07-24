@@ -161,7 +161,7 @@ $conn->close();
     <div class="menu__bar">
         <div class="logo-container">
             <img src="./image/drapeau.png" alt=Logo class="logo-image">
-            <h1 class="logo">VoteElectronique</h1>
+            <h1 class="logo"><a href="Admin2.php">VoteElectronique</a></h1>
         </div>
         <ul> 
             <li><a class="active" href="connection.php">Admin</a></li>

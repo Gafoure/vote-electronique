@@ -31,6 +31,7 @@ if (!isset($_GET['electionID'])) {
             }
             .election-list li {
                 margin-bottom: 20px;  /*espace entre les colonnes*/
+                 text-align: center;  
             }
             .election-list a {
                 display: block;
@@ -40,6 +41,7 @@ if (!isset($_GET['electionID'])) {
                 text-decoration: none;
                 border-radius: 15px;
                 transition: background-color 0.3s ease;
+                 font-size: 18px;  
             }
             .election-list a:hover {
                 background-color: #0056b3;
@@ -48,7 +50,7 @@ if (!isset($_GET['electionID'])) {
     </head>
     <body>
     <div class='container'>
-        <h1 class='mt-5 text-center'>Sélectionnez une élection</h1>
+        <h2 class='mt-5 text-center'>Sélectionnez une élection</h2>
         <ul class='election-list'>";
     while ($row = $result_elections->fetch_assoc()) {
         echo "<li><a href='results.php?electionID=" . $row['electionID'] . "'>" . htmlspecialchars($row['TypeElection']) . "</a></li>";
@@ -204,7 +206,11 @@ $conn->close();
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);   
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);  
+             
+        }
+        .container h1{
+            text-align: center;
         }
         .candidate-card {
             display: flex;
